@@ -2,7 +2,8 @@
 Ascii tables can simplify your tests.
 
 This was originally described in
-[ASCII Tables For Clearer Testing](https://punctuatedproductivity.wordpress.com/2016/02/02/ascii-tables-for-clearer-testing/).
+[ASCII Tables For Clearer Testing](https://punctuatedproductivity.wordpress.com/2016/02/02/ascii-tables-for-clearer-testing/)
+and in the readme of the [ATV gem](https://github.com/kellyfelkins/atv).
 
 Please browse the submissions here to see how ASCII tables reduce
 noise and improve clarity of tests.
