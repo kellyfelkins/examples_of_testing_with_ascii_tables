@@ -13,7 +13,7 @@ Compare the [original test file](https://github.com/kellyfelkins/examples_of_tes
 ## Contributing
 
 Yes! Please contribute more examples of ASCII tables in use.
-Pull requests are welcome on GitHub at https://github.com/kellyfelkins/examples\_of\_testing\_with\_ascii\_tables. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Pull requests are welcome on GitHub at https://github.com/kellyfelkins/examples_of_testing_with_ascii_tables. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
