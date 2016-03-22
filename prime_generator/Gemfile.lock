@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    atv (0.0.10)
+    minitest (5.8.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  atv
+  minitest
+
+BUNDLED WITH
+   1.11.2
