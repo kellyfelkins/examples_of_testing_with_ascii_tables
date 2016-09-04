@@ -132,4 +132,44 @@ EOD
       end
     end
   end
+
+
+  # This is the spec from a job interview coding challenge. The company probably
+  # does not want solutions in the wild so the implementation is not included.
+  # Here is the spec implemented with an ascii table:
+  describe AnyThree do
+    it 'with these values produces these results' do
+
+      test_data, line_no = <<EOD, __LINE__ + 4
+    |----------------------------------------------------------+-----------------------------+------------|
+    | description                                              | values                      | expected   |
+    |----------------------------------------------------------+-----------------------------+------------|
+    | with 0 ints returns nil                                  | []                          | nil        |
+    | with 1 int returns nil                                   | [4]                         | nil        |
+    | with 2 ints returns nil                                  | [4, 1]                      | nil        |
+    | with 3 zeros returns 3 zeros                             | [0, 0, 0]                   | [0, 0, 0]  |
+    | with 2 zeros and 1 three returns nil                     | [0, 0, 3]                   | nil        |
+    | with 0, 1 and -1, returns [-1, 0, 1]                     | [0, 1, -1]                  | [-1, 0, 1] |
+    | with 3 ints returns nil if they do not sum to zero       | [4, 1, -6]                  | nil        |
+    | with 3 ints returns the 3 ints when they sum to zero     | [4, 2, -6]                  | [-6, 2, 4] |
+    | with more than 3 ints returns nil if none sum to zero    | [3, 4, 9, 2, 1, 6]          | nil        |
+    | with more than 3 ints returns zeros if there are 3 zeros | [0, 3, 4, 0, 9, 2, 0, 1, 6] | [0, 0, 0]  |
+    | with more than 3 ints return any 3 ints that sum to zero | [3, 4, 9, 2, -6]            | [-6, 2, 4] |
+    |----------------------------------------------------------+-----------------------------+------------|
+EOD
+
+      ATV.from_string(test_data).each_with_index do |row, index|
+        values = eval(row['values'])
+        expected = eval(row['expected'])
+        actual = AnyThree.new.zero_sum_ints(values)
+        actual.sort! if actual
+        actual = actual && actual.sort
+        expect(actual).to eq(expected),
+                          %Q|#{row['description']} failed| +
+                            %Q|\nactual: #{actual.inspect} |+
+                            %Q|\nexpected: #{expected.inspect} |+
+                            %Q|\nat #{__FILE__}:#{line_no+index}|
+      end
+    end
+  end
 end
